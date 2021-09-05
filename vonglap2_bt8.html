@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="playGame()">Play</button>
+    <script>
+        function playGame() {
+            let min = parseInt(prompt("Số nhỏ nhất là"));
+            let max = parseInt(prompt("Số lớn nhất là"));
+            let num = Math.floor(Math.random() * (max - min)) + min;
+            let  i = 1;
+            let  guestNum;
+            do {
+                guestNum = parseInt(prompt("Số bạn dự đoán: "));
+                if (guestNum < num ) {
+                    alert("Bạn hãy chọn số lớn hơn");
+                } else if (guestNum > num) {
+                    alert("Bạn hãy chọn số nhỏ hơn");
+                }
+                i++
+            } while (guestNum !== num && i <= 3)
+                if (guestNum === num) {
+                    alert("Bạn đã đoán đúng");
+                } else {
+                    alert("Rất tiếc bạn đã đoán sai")
+                }
+        }
+    </script>
+</body>
+</html>
